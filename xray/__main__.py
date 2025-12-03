@@ -1,8 +1,6 @@
-import json
-import sys
+"""CLI entry point for ``python -m xray``."""
 
-import xray
+from . import cli
 
 if __name__ == "__main__":
-    bad_redactions = xray.inspect(sys.argv[1])
-    print(json.dumps(bad_redactions, indent=2))
+    cli()
