@@ -2,6 +2,7 @@
 Find bad redactions.
 """
 
+import json
 import sys
 from pathlib import Path
 from typing import Union
@@ -50,4 +51,4 @@ def cli(args=None):
     if not args:
         args = sys.argv[1:]
     file = args[0]
-    print(inspect(file))
+    print(json.dumps(inspect(file), indent=2))
