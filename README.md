@@ -10,9 +10,12 @@ way, they just draw a black rectangle or a black highlight on top of black
 text and call it a day. Well, when that happens you just select the text under
 the rectangle, and you can read it again. Not great.
 
-After witnessing this problem for years, we decided it would be good to figure
-out how common it is, so, with some help, we built this simple tool. You give
-the tool the path to a PDF. It tells you if it has worthless redactions in it.
+After witnessing this problem for years (our favorite is the doc that shared 
+Taylor Swift's personal phone number), we decided it would be good to do
+something about it. 
+
+This tool is our answer. You give the tool the path to a PDF. It tells you if 
+it has worthless redactions in it and whether to call Taylor (don't).
 
 
 ## What next?
@@ -25,10 +28,10 @@ help solving some of tougher cases.
 
 ## Installation
 
-With poetry, do:
+With uv, do:
 
 ```text
-poetry add x-ray
+uv add x-ray
 ```
 
 With pip, that'd be:
@@ -38,7 +41,14 @@ pip install x-ray
 
 ## Usage
 
-You can easily use this on the command line. Once installed, just:
+`uvx` lets you run this without even installing it. For example, here's an amicus brief we filed that doesn't have any bad redactions, so it returns an empty dict:
+
+```
+uvx --from x-ray xray https://storage.courtlistener.com/recap/gov.uscourts.ca3.125346/gov.uscourts.ca3.125346.45.0.pdf
+{}
+```
+
+Once you *do* install x-ray, you can easily use it on the command line. Once installed, just:
 
 ```bash
 % xray path/to/your/file.pdf
@@ -57,8 +67,7 @@ You can easily use this on the command line. Once installed, just:
 }
 ```
 
-Or if you have the file on a server somewhere, give it a URL. If it starts
-with `https://`, it will be interpreted as a PDF to download:
+Or if you have the file on a server somewhere, give it a URL. If it starts with `https://`, it will be interpreted as a PDF to download. Here's congressional testimony our director made (it doesn't have any bad redactions):
 
 ```bash
 % xray https://free.law/pdf/congressional-testimony-michael-lissner-free-law-project-hearing-on-ethics-and-transparency-2021-10-26.pdf

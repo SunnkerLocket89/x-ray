@@ -2,9 +2,9 @@
 Find bad redactions.
 """
 
+import json
 import sys
 from pathlib import Path
-from typing import Union
 
 import requests
 from fitz import Document
@@ -14,7 +14,7 @@ from .pdf_utils import get_bad_redactions
 from .text_utils import check_if_all_dates
 
 
-def inspect(file: Union[str, bytes, Path]) -> PdfRedactionsDict:
+def inspect(file: str | bytes | Path) -> PdfRedactionsDict:
     """
     Inspect a file for bad redactions and return a Dict with their info
 
@@ -50,4 +50,4 @@ def cli(args=None):
     if not args:
         args = sys.argv[1:]
     file = args[0]
-    print(inspect(file))
+    print(json.dumps(inspect(file), indent=2))

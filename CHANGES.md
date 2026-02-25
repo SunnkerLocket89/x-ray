@@ -6,18 +6,31 @@
 
 ## Upcoming Changes
 
+ - N/A
+
+## Current Version
+
+### v0.3.6, 2025-12-24
+
+ - Happy holidays
+ - Fixes CLI export to be JSON not Python object ([issue](https://github.com/freelawproject/x-ray/issues/189))
+
+## Past Versions
+
+### v0.3.5, 2025-12-08
+
  - Dropped support for Python 3.7 and 3.8
  - Added support for Python 3.13
  - Upgrade dependencies.
  - Upgraded PyMuPDF to version 1.24.11 ([changelog](https://pymupdf.readthedocs.io/en/latest/changes.html)).
    This version provides Python Stable ABI wheels, which avoids the need to compile the package on Python 3.12+.
+ - Dropped support for Python 3.9
+ - Added support for Python 3.14
+ - Upgraded PyMuPDF to version 1.24.14
 
+### v0.3.4, 2023-05-17
 
-## Current Version
-
- - 0.3.4 (2023-05-17): Upgrade dependencies.
-
-## Past Versions
+ - Upgrade dependencies.
 
 ### v0.3.3, 2021-11-24
 
